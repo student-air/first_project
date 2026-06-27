@@ -1,15 +1,22 @@
 // Mobile nav toggle
 function toggleMenu() {
   const menu = document.getElementById('mobileMenu');
+  const burger = document.querySelector('.nav-burger');
+  if (!menu || !burger) return;
+
   menu.classList.toggle('open');
+  burger.setAttribute('aria-expanded', menu.classList.contains('open') ? 'true' : 'false');
 }
 
 // Close mobile menu on outside click
 document.addEventListener('click', function(e) {
   const menu = document.getElementById('mobileMenu');
   const burger = document.querySelector('.nav-burger');
+  if (!menu || !burger) return;
+
   if (menu.classList.contains('open') && !menu.contains(e.target) && !burger.contains(e.target)) {
     menu.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
   }
 });
 
@@ -24,7 +31,7 @@ function handleSubmit(e) {
 
   // Simulate send (replace with real backend endpoint when ready)
   setTimeout(() => {
-    note.textContent = '✓ Message received! We'll be in touch shortly.';
+    note.textContent = "✓ Message received! We'll be in touch shortly.";
     btn.textContent = 'Message Sent';
     btn.style.background = '#2D5016';
     e.target.reset();
@@ -46,6 +53,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       const offset = 76;
       const top = target.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top, behavior: 'smooth' });
+
+      const menu = document.getElementById('mobileMenu');
+      const burger = document.querySelector('.nav-burger');
+      if (menu && burger && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      }
     }
   });
 });

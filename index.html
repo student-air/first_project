@@ -7,25 +7,25 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body id="top">
 
   <!-- NAV -->
   <header class="nav-wrap">
     <nav class="nav">
-      <div class="nav-logo">
+      <a class="nav-logo" href="#top" aria-label="Go to top">
         <span class="logo-mark">A</span>
         <div class="logo-text">
           <span class="logo-name">Andrade Carpentry</span>
           <span class="logo-sub">LLC · Newark, NJ</span>
         </div>
-      </div>
+      </a>
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#reviews">Reviews</a></li>
         <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
       </ul>
-      <button class="nav-burger" aria-label="Menu" onclick="toggleMenu()">&#9776;</button>
+      <button class="nav-burger" type="button" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMenu()">&#9776;</button>
     </nav>
     <div class="mobile-menu" id="mobileMenu">
       <a href="#services" onclick="toggleMenu()">Services</a>
@@ -251,13 +251,13 @@
               <span class="contact-value">+1 (973) 289-4334</span>
             </div>
           </a>
-          <div class="contact-card">
+          <a class="contact-card" href="https://www.google.com/maps/search/?api=1&query=168+Johnson+Ave%2C+Newark%2C+NJ+07108" target="_blank" rel="noopener noreferrer" aria-label="Open Andrade Carpentry location in Google Maps">
             <div class="contact-icon">📍</div>
             <div>
               <span class="contact-label">Location</span>
               <span class="contact-value">168 Johnson Ave<br/>Newark, NJ 07108</span>
             </div>
-          </div>
+          </a>
           <div class="contact-card">
             <div class="contact-icon">🕐</div>
             <div>
@@ -310,7 +310,7 @@
       </div>
       <div class="footer-contact">
         <a href="tel:+19732894334">+1 (973) 289-4334</a>
-        <span>168 Johnson Ave, Newark, NJ 07108</span>
+        <a href="https://www.google.com/maps/search/?api=1&query=168+Johnson+Ave%2C+Newark%2C+NJ+07108" target="_blank" rel="noopener noreferrer">168 Johnson Ave, Newark, NJ 07108</a>
       </div>
     </div>
     <div class="footer-bottom">
